@@ -59,7 +59,14 @@ public class  LearnArrays {
         for (int copyElemdArr : copyArr) {
 			System.out.println("copy Arrary"+copyElemdArr);
 		}
-
+        Arrays.toString();
+        deepToString(Object[] arr)
+        asList(T a)
+        binarySearch(T[] arr, T value)
+        sort(T[] arr)
+        copyOf(T[], int newLength)
+        copyOfRange(Tfl, int start, int end)
+        fill(T[]arr, T value)
 	}
 
 }
