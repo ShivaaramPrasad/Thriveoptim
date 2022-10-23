@@ -8,15 +8,6 @@ import org.junit.Test;
 
 public class ReversArrayTwoPinter {
 
-	/*
-	905. Sort Array By BruteForce  the array will be unsorted
-
- /**
-	 * 1.initialise 2 pointers -> start = 0; end = nums.length-1
-	 * 2.swap the Value
-	 * 3.increment the strat and decrement end index 
-	 * 4.strat <end , else break 
-	 */
 
 	@Test//Positve 
 	public void example1(){
