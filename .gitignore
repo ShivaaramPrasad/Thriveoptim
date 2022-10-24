@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings/*
+target/*
+/test-output/*
+/target/
+/test-output/
+.DS_STORE
+*/.DS_STORE
+/bin/
+.idea
