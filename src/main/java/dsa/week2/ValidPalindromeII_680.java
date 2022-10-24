@@ -8,11 +8,10 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Assment2 {
+public class ValidPalindromeII_680 {
 	
 	/*
-	Given a string as plaindrom
-	string s="RADAR"
+	https://leetcode.com/problems/valid-palindrome-ii/
 */ 
 /*
  * Approch one 

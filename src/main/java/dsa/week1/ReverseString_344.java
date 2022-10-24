@@ -47,7 +47,7 @@ You must do this by modifying the input array in-place with O(1) extra memory.
 	@Test
 	public void example1() {
 		String s = "hello";
-		reverseUsing2Pointer(s);
+		revOnlyLetters(s);
 	}
 	
 	
@@ -68,20 +68,17 @@ You must do this by modifying the input array in-place with O(1) extra memory.
 			ch[right--] = ch[left];
 			ch[left++] = temp;
 		}
-		System.out.println(new String(ch));
+		System.out.println(s = new String(ch));
 	}
 	
 	
-	 public void reverseString(char[] s) {
-	        
-		   int left = 0; int right = s.length-1;
-				while (left < right) { // O(n/2) => o(n)
-					// swap
-					char temp = s[right];
-					s[right--] = s[left];
-					s[left++] = temp;
-				}
-		        
-		       }
+	public String revOnlyLetters(String s) {
+		String reversed="";
+        for(int i=s.length()-1;i>=0;i--){
+            reversed+=s.charAt(i);
+        }
+        return reversed;
+	}
+	}
 	
-}
+

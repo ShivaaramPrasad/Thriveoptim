@@ -1,5 +1,7 @@
 package dsa.week2;
 
+import org.junit.Test;
+
 public class Palindrom {
 
 	/*
@@ -31,21 +33,16 @@ public class Palindrom {
 	 * Approach 1: Start with worst -> 
 	 * 
 	 * 
-	 * @Test
+	 */
+
+	
+	@Test
     public void testCase1() {
         String s="Radar";
         String reversePalindrome = reversePalindrome(s);
         System.out.println(reversePalindrome);
 
     }
-
-    /*Given a string s and a number k, find the maximum number of vowels in substring of size k.
-    String s: "workaattech"
-    k: 3
-    /*pseudocode:
-	 * 
-	 * 
-	 */
 	//2 pointers
 
 	public String reversePalindrome(String s) {
@@ -59,7 +56,7 @@ public class Palindrom {
 			ch[left++] = temp;
 		}
 		if(s.equalsIgnoreCase(new String(ch))){
-			System.out.println("The Given String is not Palindrome");
+			System.out.println("The Given String is Palindrome");
 		}
 		else {
 			System.out.println("The Given String is not Palindrome");
@@ -73,10 +70,9 @@ public class Palindrom {
 
 	// BruteForce o[n]
 	public String reversePalindromeBruteForce(String s) {
-		char[] ch = s.toCharArray();
 		String reverseInput = "";
-		for(int i=ch.length-1;i>=0;i--) {
-			reverseInput = reverseInput +ch[i];
+		for(int i=s.length();i>=0;i--) {
+			reverseInput+= reverseInput +s.charAt(i);
 		}
 		if(s.equalsIgnoreCase(reverseInput)) {
 			System.out.println("The Given String is Palindrome");
