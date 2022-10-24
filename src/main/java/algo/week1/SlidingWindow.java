@@ -9,6 +9,10 @@ public class SlidingWindow {
 	 One of the comman asked interview because of its efficiency. 
 	 Time Complexity:O(n)
 	 Space Complexity:O(1)
+	 Sub Array 
+	 Substring 
+	 Continues
+	 Consecutive 
 	 */
 
 }

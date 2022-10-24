@@ -34,7 +34,10 @@ public class MergeStringsAlternately_1768 {
 	String output = "apbqcd";
 
 	}
+	
+	
 	 public String mergeAlternately(String word1, String word2) {
+		return word2;
 	        
 	        
 	        
