@@ -13,6 +13,7 @@ public class SlidingWindow {
 	 Substring 
 	 Continues
 	 Consecutive 
+	 contiguous 
 	 */
 
 }

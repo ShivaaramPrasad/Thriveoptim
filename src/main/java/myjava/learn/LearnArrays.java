@@ -59,6 +59,7 @@ public class  LearnArrays {
         for (int copyElemdArr : copyArr) {
 			System.out.println("copy Arrary"+copyElemdArr);
 		}
+        /*
         Arrays.toString();
         deepToString(Object[] arr)
         asList(T a)
@@ -67,6 +68,7 @@ public class  LearnArrays {
         copyOf(T[], int newLength)
         copyOfRange(Tfl, int start, int end)
         fill(T[]arr, T value)
+        */
 	}
 
 }

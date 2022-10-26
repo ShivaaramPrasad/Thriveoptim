@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class Occurrence_1207 {
 	
-public static void main(String[] args) {
 
 	/*
+	 https://leetcode.com/problems/unique-number-of-occurrences/
+	 1207
 	Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
 	Example 1:
 	Input: arr = [1,2,2,1,1,3]
@@ -18,14 +19,14 @@ public static void main(String[] args) {
 	Input: nums = [3,0,1]
 	Output: 2
 
-	1. Step will Valdiating the arrarylenght =1 retrun the same array
+	1. Step will Validating the arrarylenght =1 retrun the same array
 	2. Sort the array 
 	3.find the lenght of an aray find the n or size of an array
 	4. ittating the forloop arr[i]=i 
-	5 not cantransfer to next elemment 
-	6) if not matching the elemnet then print i 
+	5 not can transfer to next element 
+	6) if not matching the element then print i 
 	7) move next element i++
 	*/	
 	
-}	
+
 }
