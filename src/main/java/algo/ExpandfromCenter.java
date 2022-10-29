@@ -1,4 +1,4 @@
-package algo.week1;
+package algo;
 
 public class ExpandfromCenter {
 	

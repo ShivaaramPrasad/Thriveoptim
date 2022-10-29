@@ -1,4 +1,4 @@
-package dsa.week2.day25;
+package dsa.week3.day25;
 
 import java.util.Arrays;
 
