@@ -95,10 +95,10 @@ Your solution must use only constant extra space.
                 start++;
                 return new int[]{start, end};
             }
-        else if(nums[start]+nums[end]>target )
+        else if(nums[start]+nums[end]<target )
             end--;
         else start++;
     }
-    return new int[] {start,end+1};
+    return new int[] {start,end};
 	}
 }

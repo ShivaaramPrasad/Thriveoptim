@@ -12,12 +12,20 @@ public class  LearnStrings {
 		/*
 		 * String can be created by 2 ways
 		 * 1) Using object
-		 * 2) Using literal (like variables) 
+		 * 2) Using literal (like variables)    String s1 ="Java" , String s2="Java";
+		 * 
+		 *  
 		 * 
 		 * Difference: to do with memory allocation
 		 * 
 		 */
-		
+		//int original; 
+		//String e = new String( original:"test");
+
+		String s =new String("test");
+	    s="test";
+
+		System.out.println(s);
 		String title = "Leaftaps";
 		String username = "demosalesmanager";
 		String dropdownOption = "Marketing";
@@ -99,9 +107,16 @@ public class  LearnStrings {
 		
 		//System.out.println(myPreviousCompany.replace("f", "ves"));
 		
+		String a="learning";
 		String sentence = "I am learning Java well so far";
 		String[] split = sentence.split(" ");
 		System.out.println(split.length);
+		
+		char[] arr = a.toCharArray();
+		char[] arrl= new char[2];
+		a.getChars(1,2, arrl,0);
+		System.out.println(Arrays.toString(arrl));
+		System.out.println(a.codePoints());
 		
 	}
 		
