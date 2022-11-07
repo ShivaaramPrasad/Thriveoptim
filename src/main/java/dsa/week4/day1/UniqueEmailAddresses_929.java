@@ -82,9 +82,9 @@ Output: 3
 			if(username.contains("+")) { 
 				int plus_position = username.indexOf("+"); 
 				username=username.substring(0,plus_position);
+				username=username.replace(".", "");
 
 			}	
-			username=username.replace(".", "");
 			String newEmail=username+domainame;
 			uniqueEmails.add(newEmail);
 		}

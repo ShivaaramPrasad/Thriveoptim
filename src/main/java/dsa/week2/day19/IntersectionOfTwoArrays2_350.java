@@ -132,22 +132,20 @@ question:
 	 */
 
 	public int[] intersectionOfTwoArrays(int[] nums1, int[] nums2) {
-		Arrays.sort(nums1);
-		Arrays.sort(nums2);
-		int first=0 , second= 0  ;
-		//Set<Integer> set= new HashSet<Integer>();
-		while(first<nums1.length && second<nums2.length ){
-			if(nums1[first]<nums2[second])
-				first++;
-            else if(nums1[first]>nums2[second])
-            	second++;
-            else{
-                first++;
-                second++;
+		 Arrays.sort(nums1);
+			Arrays.sort(nums2);
+			int first=0 , second= 0 ; int k=0;
+	        int[] ans= new int[nums1.length+nums1.length];
+			while(first<nums1.length && second<nums2.length ){
+				if(nums1[first]<nums2[second])
+					first++;
+	            else if(nums1[first]>nums2[second])
+	            	second++;
+	            else{
+	                ans[k++]=nums1[first++];
+	                second++;
 
+			}
 		}
-	}
-		return Arrays.copyOfRange(nums1, 0, second);
-
-}
-}
+			return Arrays.copyOfRange(ans, 0, k);
+	    }}

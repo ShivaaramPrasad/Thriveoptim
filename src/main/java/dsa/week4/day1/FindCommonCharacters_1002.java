@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 
 import org.junit.Test;
 
+import org.junit.*;
+
 public class FindCommonCharacters_1002 {
 
 	/*
@@ -31,6 +33,7 @@ Output: ["c","o"]
 		String [] words = {"bella","label","roller"};
 		String [] Output= {"e","l","l"};
 		System.out.println(commonChars(words));
+		Assert.assertEquals(Output, commonChars(words));
 	}
 
 	@Test
@@ -38,6 +41,10 @@ Output: ["c","o"]
 	{
 		String [] words = {"cool","lock","cook"};
 		String [] Output= {"c","o"};
+		
+		System.out.println(commonChars(words));
+		Assert.assertEquals(Output, commonChars(words));
+
 	}
 
 	/*

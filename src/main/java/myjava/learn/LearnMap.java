@@ -81,4 +81,6 @@ public class LearnMap {
     }
 }
 	
+	 //map.get(snew).add(s);
+	
 }
