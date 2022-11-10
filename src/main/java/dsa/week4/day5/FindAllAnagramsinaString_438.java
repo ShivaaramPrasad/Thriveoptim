@@ -1,5 +1,6 @@
 package dsa.week4.day5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -36,15 +37,6 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 	 */
 
 	@Test
-	public void test1() {
-		String s = "cbaebabacd";
-		String p = "abc";
-		Assert.assertEquals(Arrays.asList(0,6), anagramUsingSW(s, p));
-	}
-
-
-
-	@Test
 	public void test2() {
 		String s = "abab";
 		String p = "ab";
@@ -52,26 +44,41 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 
 		//Assert.assertEquals(Arrays.asList(0,1,2),anagramUsingSW(s, p));
 	}
+	
+	@Test
+	public void test1() {
+		String s = "cbaebabacd";
+		String p = "abc";
+		System.out.println(anagramUsingSW(s, p));
+		Assert.assertEquals(Arrays.asList(0,6), anagramUsingSW(s, p));
+	}
 
-	public void anagramUsingSW(String s, String p) {
+	public List<Integer> anagramUsingSW(String s, String p) {
 
 		HashMap<Character, Integer> Hmap1 = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> Hmap2 = new HashMap<Character, Integer>();
-		
+		List<Integer> out= new ArrayList<Integer>();
+
 		for (int i = 0; i < p.length(); i++) {
 			Hmap1.put(p.charAt(i), Hmap1.getOrDefault(p.charAt(i), 0)+1);
 		}
 		for (int i = 0; i < s.length(); i++) {
-			for (int j = 1; j < s.length(); j++) {
-				Hmap1.put(s.charAt(i), Hmap1.getOrDefault(s.charAt(i), 0)+1);
+			Hmap2.clear();
+			for (int j = i; j < s.length(); j++) {
+				Hmap2.put(s.charAt(j), Hmap2.getOrDefault(s.charAt(j), 0)+1);
 				if(Hmap1.size()==Hmap2.size()) {
 					if(Hmap1.equals(Hmap2)) {
-						System.out.println(i);
+						//System.out.println(i);
+						//Add List 
+						out.add(i);
+						break;
 					}
 				}
 
 			}
 
-		}Hmap2.clear();
+		}
+		
+		return out;
 	}
 }
