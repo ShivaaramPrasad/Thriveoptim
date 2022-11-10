@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 
 import org.junit.Assert;
 
-public class UncommonWordsfromTwoSentences {
+public class UncommonWordsfromTwoSentences_884 {
 	/*
 	 884. Uncommon Words from Two Sentences
 	 https://leetcode.com/problems/uncommon-words-from-two-sentences/
@@ -46,6 +46,20 @@ Output: ["banana"]
 	    String [] output= {"banana"};
 	    Assert.assertEquals(output, uncommonFromSentences( s1,  s2));
 	}
+	
+	/*
+	 Approach 1
+	 
+	   - Concatenate given two string s1 and s2
+	   - Convert String in to an array by regx using split " "
+	   - Create a map with String Integer as key value to hold each words and its occurence 
+	     in both the sentence 
+	   - Keep adding each word and its occurrence into map 
+	   - create List <string> output 
+	   - Iterate through entrySet map to add key into output where value matches 1
+	   - return output as list to array.
+	   
+	 */
 	
 	private String[] uncommonFromSentences(String s1, String s2) {
 
