@@ -1,4 +1,4 @@
-package dsa.week4.day11;
+package dsa.week4.day10;
 
 import java.util.HashMap;
 
@@ -67,7 +67,7 @@ M             1000
 		String s = "MCDLXXVI";
 		int output= 1476
 ;
-       Assert.assertEquals(output, romanToInt(s));
+       Assert.assertEquals(output, romanToInt2(s));
        System.out.println(romanToInt(s));	
 	}
 	
@@ -108,4 +108,41 @@ M             1000
 
 		return result;
 	}
+	
+	
+
+    /**
+     * - create a hashmap with romanNum and its equivalent number as key value pair.
+     * - initialize 2 int variables : result = 0; and previous = 1.
+     * - start iterating given String from length -1 to 0.
+     * - check if charAt currIndex >= previous
+     *      if yes, add map.get(charAt(currIndx)) to result.
+     *      else, remove map.get(charAt(currIndx)) from result.
+     *  - assign charAt currIndx to previous to continue loop.
+     *  - finally return result.
+     */
+
+ //MCMXCIV
+    private int romanToInt2(String roman){
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>(){
+            {
+                put('I',1);
+                put('V',5);
+                put('X',10);
+                put('L',50);
+                put('C',100);
+                put('D',500);
+                put('M',1000);
+            }
+        };
+        int result = 0;
+        int prev = 1;
+        for(int i = roman.length()-1; i >= 0; i--){
+            if(map.get(roman.charAt(i)) >= prev) result += map.get(roman.charAt(i)); //5 104 1094 1894
+            else result -= map.get(roman.charAt(i));   // 4  94  994 894
+            prev = map.get(roman.charAt(i)); // 5 104 94 1094 994 894
+        }
+        return result;
+    }
+
 }

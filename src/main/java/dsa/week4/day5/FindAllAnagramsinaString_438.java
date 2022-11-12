@@ -40,7 +40,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 	public void test2() {
 		String s = "abab";
 		String p = "ab";
-		anagramUsingSW(s,p);
+		anagramUsingSlidingWindow(s,p);
 
 		//Assert.assertEquals(Arrays.asList(0,1,2),anagramUsingSW(s, p));
 	}
@@ -49,7 +49,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 	public void test1() {
 		String s = "cbaebabacd";
 		String p = "abc";
-		System.out.println(anagramUsingSW(s, p));
+		//System.out.println(anagramUsingSlidingWindow(s, p));
 		Assert.assertEquals(Arrays.asList(0,6), anagramUsingSW(s, p));
 	}
 
@@ -80,5 +80,53 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 		}
 		
 		return out;
+	}
+	
+	/*
+	 Approch 2
+	 -Create two separate hash maps to store their respective characters and values
+	 - Storing the characters in each map upto p.length()
+	 - initializing left = 0, to store the index to the arraylist
+	  - right should be less than s.length()
+	  -comparing each maps if they match add the index value to the list
+	   -Adding the right character
+	   -removing the left side character in the window
+	 */
+	
+	public List<Integer> anagramUsingSlidingWindow(String s, String p) {
+		
+		if(s.length()<p.length()) return new ArrayList<>();
+		
+		HashMap<Character,Integer> sMap= new HashMap<Character,Integer>();
+		HashMap<Character,Integer> pMap= new HashMap<Character,Integer>();
+		
+		for (int i = 0; i < p.length(); i++) {
+			pMap.put(p.charAt(i), pMap.getOrDefault(p.charAt(i), 0)+1);
+
+		}
+        int start = 0, end = p.length();
+        ArrayList<Integer> an = new ArrayList<Integer>();
+        while(start<s.length())
+        {
+        	if(sMap.equals(pMap))
+        		an.add(end);
+	             sMap.put(s.charAt(start), sMap.getOrDefault(s.charAt(start),0)+1);
+
+
+            if(sMap.get(s.charAt(start)) == 1) 
+	             sMap.remove(s.charAt(start));
+
+            else 
+	             sMap.put(s.charAt(start), sMap.get(s.charAt(start)) - 1);
+	             start++;
+	             end++;
+        }
+	        if(sMap.equals(pMap))
+	        	an.add(start);
+
+
+		return an;
+    	
+	
 	}
 }
