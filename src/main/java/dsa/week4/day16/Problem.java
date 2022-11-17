@@ -80,7 +80,6 @@ public class Problem {
 		}
 		int size=Integer.toString(n).length();
 		int[] output = new int[size];
-
 		for(int i=0; i<size;i++)
 		{ 
 			temp= n%10;
@@ -90,7 +89,6 @@ public class Problem {
 				output[0]=output[0]*-1;
 			}
 		}  
-
 		//return Arrays.toString(output);
 		return output;
 

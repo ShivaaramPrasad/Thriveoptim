@@ -3,55 +3,62 @@ package teatcaseEnumeration;
 public class teatcaseEnumeration3 {
 	
 	/*
-	- Test case enumeration for file upload in a portal.
-	
-- Check weather The Input type is pointing to file or not
-- in Selenium we can use sendkey or Robot Class
-- Need to check What format of file 
-- Check the maxim file size is acceptable 
-- Check Multiple files or allowing to add or not
-  While Uploading mutiple file if one file is getting corrupted is other files rejected or not
-- Check file size beyond the file size limit 
-- Already file exist or  not
-- Check the Type of the file whether it should accept video or pfd or word 
-- Check APi if work for Upload file 
-- The File upload should have progress bar in downloading 
-- After uploading he file is there remove option or confirmation to upload 
-- Where the file is storing the files 
-- Check the Password protected  file or corrupted file 
-- Drag and drop from the system , support google drive onedrive. 
-- Check the the upload file is not present the src location while uploading 
-- CHeck The FIle Read write view 
+Test Enumeration
+- There is a change in requirement where the Country text box is replaced by a dropdown 
+   how do you take this from QA angle
+   
+  - No Null value should show 
+  - Duplicate enters should not show 
+  - Check whether any band country list is available for specific to project
+  - Scroll or type and Scroll should be in ui for better Ui Interaction
+  - The validation which are given for text box should not show
+  - The validation specific to dropdown should show
+  - how time is taking to load the values in the dropdown 
+  - The APi Which involves country values to show dropdown 
+  
+  - DB Check previous data should not affect - backward compatibility nned to check  
+  - In Automation dropdown can be two from-  select function or div span tag respective dropdown  
+  
+  
+  
+- Test case Enumeration of Login scenario and OTP generation?
+	- Login UI validation 
+	   - Max length of username and associated password maxlenght
+	   - If correct username with valid password 
+	    - If invalid username with valid password 
+	    - If valid username with invalid password 
+	    - Placeholder is present or not
+	    - Paassword is protected or not
+	    - Eye option is for check the password
+	    - 
 
-- Check the uploading file with  less bandwidth net 
-- Check The Network constrains and VPN 
-- Check With Multiple file uploading at same time 
-- Check with different platform and Bowers 
-- Connection - Disconnect , offline to online 
-
-
-
-- You have three modules one is Wi-Fi enabled AC with connected to Router and 
-we  can control the AC via web applications and mobile applications. What are the types of testing you do?
-
-Testing In Isolation and Integration and components
-
--Mocking , sand box testing that should be involved 
--Compatible with different  
-- Accessibility - Speech recognition , wifi recognition , gesture 
-- Check the Room Temperature as per the room Temperature
-- Pre Setting to trun the sensor 
-- IF any component is not working should show error message
-- 
-
-
-
-Brain teaser
-
-- You have two buckets one with capacity of 5 litres and the other with a capacity of 3 litres. You have to measure 4 litres using the two buckets.How will you do it??
+	- Login with OAuth integration with Gmail or github
+	- if The user is blocked due to there actions should not proceed next   
+	- if rest password is initiated but not done,  should not need to allow OTP while logging in.
+	- 
+	- How many wrong otp trial it accept
+	- Alternate otp services like gmail or call
+	- How quick the oTp is recvied when otp is genrated 
+	- While clicking the resend otp is it same otp is received or new otp 
 	 
-
-
+	 Functional:
+	 - same login can use by concurrent users at same time in different platform , devices.
+	 
+	 Performance :
+	 - how many user login in to application at same time
+	 -How much time its taking to login in to the application and response should not 
+     - Spike testing 
+     
+	 Security:
+	  - The Token which is generated should not allow other users to use.
+	  - Should not allow to interact  with dom
+	  - SQL injection should not allow
+	  - enable or disable the OTP function
+	 
+	  
+	 
+Brain teaser
+- You have a two wheeler with a spare tyre, given each tyre would be worn out after travelled for 2.5kms, what’s the max distance you can travel?
 
 
 */
