@@ -82,20 +82,19 @@ public class Problem {
 		int[] output = new int[size];
 
 		for(int i=0; i<size;i++)
-		{
+		{ 
 			temp= n%10;
 			n/=10;
 			output[size-i-1]= temp;
-			if( negaitve= true) {
+			if( negaitve== true) {
 				output[0]=output[0]*-1;
 			}
-		}
+		}  
 
 		//return Arrays.toString(output);
 		return output;
 
 	}
-
 
 
 }
