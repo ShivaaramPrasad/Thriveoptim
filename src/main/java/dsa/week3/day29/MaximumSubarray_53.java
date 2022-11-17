@@ -42,8 +42,8 @@ Output: 23
 
 	 @Test
 	 public void test3(){
-		 int[] nums = {5,4,-1,7,8};
-		 int output=23;
+		 int[] nums = {2,3,6,-5,10,1,1};
+		 int output=2;
 		 //{}
 		 Assert.assertEquals(output,maxSumSubArray(nums));
 

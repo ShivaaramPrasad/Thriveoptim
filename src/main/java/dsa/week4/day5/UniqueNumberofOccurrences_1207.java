@@ -28,7 +28,7 @@ Given an array of integers arr, return true if the number of occurrences of each
 	public void test2()
 	{
 		int [] arr = {1,2};
-		Assert.assertEquals(false, uniqueOccurrences(arr));
+		Assert.assertEquals(true, uniqueOccurrences(arr));
 
 	}
 	@Test
@@ -38,6 +38,14 @@ Given an array of integers arr, return true if the number of occurrences of each
 		Assert.assertEquals(true, uniqueOccurrences(arr));
 
 	}
+	@Test
+	public void test4()
+	{
+		int [] arr = {-3,0,-3,0};
+		Assert.assertEquals(false, uniqueOccurrences(arr));
+
+	}
+	
 	
 	 public boolean uniqueOccurrences(int[] arr) {
 
@@ -49,7 +57,7 @@ Given an array of integers arr, return true if the number of occurrences of each
 				else
 					map.put(arr[i], 1);
 			}
-			Set<Integer> set = new HashSet<Integer>(map.values());
+			Set<Integer> set = new HashSet<Integer>(map.keySet());
 			/*
 			 * for (Entry<Integer, Integer> entry : map.entrySet()) {
 			 * 		set.add(entry.getValue()); 
@@ -57,6 +65,22 @@ Given an array of integers arr, return true if the number of occurrences of each
 			 */
 			return set.size() == map.size();
 		}
+	 
+	 public boolean uniqueOccurrences2(int[] arr) {
+
+	   		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+			for (int i = 0; i < arr.length; i++) {
+				map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
+			}
+			for( Map.Entry<Integer, Integer> entries: map.entrySet() ) {
+				if( entries.getValue() == 1) 
+					return true;
+			}
+
+			return false;
+		}
+	 
+	 
 	}
 
 

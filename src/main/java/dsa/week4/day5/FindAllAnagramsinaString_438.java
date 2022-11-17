@@ -113,7 +113,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 	             sMap.put(s.charAt(start), sMap.getOrDefault(s.charAt(start),0)+1);
 
 
-            if(sMap.get(s.charAt(start)) == 1) 
+            if(sMap.get(s.charAt(start)) > 1) 
 	             sMap.remove(s.charAt(start));
 
             else 
