@@ -23,7 +23,6 @@ public class Template {
 	    Yes — great, is there an alternate?
 	     No — Can I break down the problem into sub problems?
 
-
 	4) Ask for hint (If you do not know how to solve)
 	5) DO I know alternate solutions as well?
 	      Yes — What are those?
