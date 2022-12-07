@@ -79,8 +79,6 @@ return max
 
 	}
 
-
-
 	private int lengthOfLongestSubstring(String s) {
 
 		int start = 0, end = 0, currentMax = 0, max = 0;

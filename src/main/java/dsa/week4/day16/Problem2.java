@@ -36,7 +36,7 @@ public class Problem2 {
 		int [] output= {0,0,0,1,2,5,6,10};
 
 		//Assert.assertArrayEquals(output, moveZeros(nums));
-		System.out.println(Arrays.toString(moveZeros2poniterleft(nums)));
+		System.out.println(Arrays.toString(moveZeros2poniter(nums)));
 	}
 	//Time complexity = (O)2n
 	// Space Complexity =(O)2n
@@ -66,28 +66,19 @@ public class Problem2 {
     */
 	private int[] moveZeros2poniter(int[] nums) {
 		int left=0; int right=0;
-		
-		while(right<nums.length)
-		{
-			if(nums[right]!=0)
-			{
+		while(right<nums.length){
+			if(nums[right]!=0){
 				int temp= nums[right];
 				nums[right]=nums[left];
-				nums[left++]=temp;
-			}
-			right++;
+				nums[left++]=temp;  
+			}right++;
 		}
-		
 		return nums;
 	}
-
 	private int[] moveZeros2poniterleft(int[] nums) {
 		int left=0; int right=0;
-		
-		while(right<nums.length)
-		{
-			if(nums[right]==0)
-			{
+		while(right<nums.length){
+			if(nums[right]==0){
 				int temp= nums[right];
 				nums[right++]=nums[left];
 				nums[left++]=temp;

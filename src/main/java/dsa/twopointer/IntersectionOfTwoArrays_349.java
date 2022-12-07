@@ -1,4 +1,4 @@
-package dsa.week2.day19;
+package dsa.twopointer;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,11 +6,15 @@ import java.util.Set;
 
 import org.junit.Test;
 
-public class IntersectionOfTwoArrays2_350  {
+public class IntersectionOfTwoArrays_349 {
 
 	/*
-	 https://leetcode.com/problems/intersection-of-two-arrays-ii/
-Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+349. Intersection of Two Arrays
+
+ https://leetcode.com/problems/intersection-of-two-arrays/
+	 
+	 Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
 
 
 Example 1:
@@ -58,6 +62,8 @@ question:
 	       No — That is still fine, proceed to solve by what you know !!
 
 	 */     
+
+
 
 	@Test
 	public void example1() {
@@ -130,18 +136,26 @@ question:
 	 */
 
 	public int[] intersectionOfTwoArrays(int[] nums1, int[] nums2) {
-		    Arrays.sort(nums1);
-			Arrays.sort(nums2);
-			int first=0 , second= 0 ; int k=0;
-	        int[] ans= new int[nums1.length+nums1.length];
-			while(first<nums1.length && second<nums2.length ){
-				if(nums1[first]<nums2[second]) first++;
-	            else if(nums1[first]>nums2[second]) second++;
-	            else{
-	                ans[k++]=nums1[first++];
-	                second++;
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
+		int first=0 , second= 0  ;
+		Set<Integer> set= new HashSet<Integer>();
+		while(first<nums1.length && second<nums2.length ){
+			if(nums1[first]<nums2[second])
+				first++;
+            else if(nums1[first]>nums2[second])
+            	second++;  
+            else{
+               set.add(nums1[first]);
+                first++;
+                second++;
 
-			}
 		}
-			return Arrays.copyOfRange(ans, 0, k);
-	    }}
+	}
+		  int[] ins=new int[set.size()];
+		  first=0;
+	        for(int ele: set)
+	        	ins[first++]=ele;
+	        return ins;
+}
+}
