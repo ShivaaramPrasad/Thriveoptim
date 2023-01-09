@@ -1,6 +1,9 @@
 package dsa.interview.sdet;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -30,7 +33,7 @@ arr= {1,5,7,10}; out=0
 	public void test2() {
 		int [] nums= {1, 2, 3};
 		int count =2; 
-		Assert.assertEquals(count, findCountOfElements(nums));
+		Assert.assertEquals(count, findCountOfElementsOptimized(nums));
 
 	}
 
@@ -38,21 +41,21 @@ arr= {1,5,7,10}; out=0
 	public void test1() {
 		int [] nums= {1, 3, 2};
 		int count =2;
-		Assert.assertEquals(count, findCountOfElements(nums));
+		Assert.assertEquals(count, findCountOfElementsOptimized(nums));
 	}
 
 	@Test
 	public void test3() {
 		int [] nums= {5, 7, 9};
 		int count =0; 
-		Assert.assertEquals(count, findCountOfElements(nums));
+		Assert.assertEquals(count, findCountOfElementsOptimized(nums));
 
 	}
 	@Test
 	public void test4() {
 		int [] nums= {1, 1, 1};
 		int count = 0; 
-		Assert.assertEquals(count, findCountOfElements(nums));
+		Assert.assertEquals(count, findCountOfElementsOptimized(nums));
 
 	}
 
@@ -70,4 +73,18 @@ arr= {1,5,7,10}; out=0
 		return count; 
 	}
 
+	public int findCountOfElementsOptimized(int[] nums) {
+	    int size = nums.length;    
+	    int count = 0; 
+	    Map<Integer, Boolean> mapNums = new HashMap<>();
+	    for(int i = 0; i < size; ++i){
+	    	mapNums.put((nums[i]), true);
+	    }
+	    for(int i = 0; i < size; ++i){
+	       if (mapNums.containsKey(nums[i]+1) == true){
+	    	   count++;
+	       }
+	    }
+	    return count;
+	}
 }

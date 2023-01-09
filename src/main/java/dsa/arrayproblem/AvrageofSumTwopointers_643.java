@@ -82,12 +82,11 @@ https://leetcode.com/problems/maximum-average-subarray-i/
         for(int i=0; i<k;i++){
             sum+=nums[i];
         }
-        double output=sum/k;
-        for(int i=k;i<nums.length-1;i++){
+        for(int i=k;i<nums.length;i++){
             sum+=nums[i]-nums[i-k];
-            max=Math.max(output,sum/k);
+            max=Math.max(max,sum);
     }
-    return max;
+    return max/k;
 }
   
 }

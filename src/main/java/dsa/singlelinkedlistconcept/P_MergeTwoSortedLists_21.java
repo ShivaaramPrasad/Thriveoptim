@@ -28,8 +28,7 @@ Output: [0]
 
 Approch 1 
 
-*/
-	
+
 	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 		 ListNode temp = new ListNode(0);
          ListNode curr=temp;
@@ -46,4 +45,6 @@ Approch 1
 		}
 		return temp.next;
 	}
+
+	 */
 }

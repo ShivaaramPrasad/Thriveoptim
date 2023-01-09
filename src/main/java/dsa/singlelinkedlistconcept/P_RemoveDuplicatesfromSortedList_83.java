@@ -36,7 +36,7 @@ public class P_RemoveDuplicatesfromSortedList_83 {
 	    ListNode(int val) { this.val = val; }
 	    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 	 }
-	 */
+
 	    public ListNode deleteDuplicates(ListNode head) {
 	      ListNode temp=head;
 	        if(head==null){
@@ -50,4 +50,6 @@ public class P_RemoveDuplicatesfromSortedList_83 {
 	        }
 	        return head;
 	    }
+
+	 */
 	}

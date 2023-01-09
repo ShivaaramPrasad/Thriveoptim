@@ -1,6 +1,7 @@
 package myjava.learn;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.poi.ss.formula.functions.Even;
 
@@ -39,36 +40,72 @@ public class  LearnArrays {
 		// Other index -> default value as null
 		//System.out.println(courses[4]);
 		
-		// Covert array in to String 
+		// Arrays.toString() Covert array in to String    
+		//Returns a string representation of the contents of the specified array
 		Arrays.toString(courses);
 		//Print to String Array
-		System.out.println(Arrays.toString(courses));
-		
+		System.out.println("courses arry to string"+Arrays.toString(courses));
 		// to Sort and Array
-		int [] nums= {1,6,7,9,2};
-		Arrays.sort(nums);
-		for (int eachNum : nums) {
-			System.out.println(eachNum);
-		}
+		int [] nums= {1,6,7,9,12,8,3,2};
 		
+		//The sorting algorithm is a Dual-Pivot Quicksort
+
+		Arrays.sort(nums);
+	
+		System.out.println("Normal sort"+Arrays.toString(nums));
 		
         int arr[] = { 12, 13, 14, 15, 16, 17, 18 };
-
+        
+        //Arrays.copyOfRange(arr, val1, val2) Copies the specified range of the specified array into a new array.
         int[] copyArr = Arrays.copyOfRange(arr, 4, arr.length + 3);
         
         for (int copyElemdArr : copyArr) {
-			System.out.println("copy Arrary"+copyElemdArr);
+			System.out.println("copy Of Range "+copyElemdArr);
 		}
-        /*
-        Arrays.toString();
-        deepToString(Object[] arr)
-        asList(T a)
-        binarySearch(T[] arr, T value)
-        sort(T[] arr)
-        copyOf(T[], int newLength)
-        copyOfRange(Tfl, int start, int end)
-        fill(T[]arr, T value)
-        */
+        
+        //Arrays.copyOfRange(arr, val1, val2)
+        //Copies the specified array, truncating or padding with null characters (if necessary)
+        //so the copy has the specified length
+        int[] copyArrOf = Arrays.copyOf(arr, 10);;
+        copyArrOf[3] = 11;
+        copyArrOf[4] = 55;
+        System.out.println("copy Of"+Arrays.toString(copyArrOf));
+        Integer a[] = new Integer[] { 10, 20, 30, 40 };
+        
+        // Arrays.asList() --> Returns a fixed-size list backed by the specified array
+        List<Integer> list = Arrays.asList(a);
+        System.out.println("The list is: " + list);
+
+       
+       // deepToString(Object[] arr)
+       //Returns a string representation of the "deep contents" of the specified array.
+        
+              int[][] images = {{1,1,0},{1,0,1},{0,0,0}};
+       System.out.println(Arrays.deepToString(images));   
+       System.out.println(Arrays.deepToString(images));       
+       int []  arr1 = {10, 20, 30, 40};
+       //System.out.println(Arrays.deepToString(arr1));
+         
+       //Searches the specified array of ints for the specified value using the
+       // binary search algorithm . 
+        int binarySearch = Arrays.binarySearch(arr1, 30);
+        System.out.println(binarySearch);
+        
+        
+        int ar[] = {2, 2, 1, 8, 3, 2, 2, 4, 2};
+        
+        // To fill complete array with a particular
+        // value
+        Arrays.fill(ar, 10);
+        System.out.println("Array completely filled" +
+                " with 10\n" + Arrays.toString(ar));
+
+        Arrays.fill(ar, 1, 5, 10);
+        
+        System.out.println(Arrays.toString(ar));
+        //[2, 10, 10, 10, 10, 2, 2, 2, 2]
+
+       
 	}
 
 }

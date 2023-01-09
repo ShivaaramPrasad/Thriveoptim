@@ -12,7 +12,8 @@ public class ReverseAList {
 	public void test1() {
 		Integer[] nums = {1,3,2,4,5};
 		List<Integer> listNums=Arrays.asList(nums);
-		System.out.println(Arrays.toString(reverseAList(listNums)));
+		//System.out.println(Arrays.toString(reverseAList(listNums)));
+		System.out.println(reverseAList1(listNums));
 	}
 
 	private Integer[] reverseAList(List<Integer> listNums) {
@@ -26,6 +27,18 @@ public class ReverseAList {
 
         }
 		return arr;
+
+	}
+	
+private List<Integer> reverseAList1(List<Integer> listNums) {
+		
+        int strat=0, end=listNums.size()-1;
+        while(strat<end) {
+        	Integer temp=listNums.get(strat);
+        	listNums.set(strat++, listNums.get(end));
+        	listNums.set(end--,temp);
+        }
+		return listNums;
 
 	}
 }

@@ -13,7 +13,7 @@ if not found = -1
 	 */
 	
 	
-	
+	/*
 	public int findPivotIndex(int [] nums) {
 		int sum=0,  count=0;
 		HashMap<Integer,Integer> map =new HashMap<Integer, Integer>();
@@ -24,5 +24,5 @@ if not found = -1
 			if(map.containsKey(sum-)) {
 			
 			}
-	}
+	}*/
 }

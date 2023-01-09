@@ -1,6 +1,10 @@
 package dsa.week4.day16;
 
-import junit.framework.Assert;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Amazon {
 	/*
@@ -23,27 +27,10 @@ public class Amazon {
 	{
 		int n =1234;
 		int k=1;
-		Assert.assertEquals(3412, roatateArray(n, k));
+		int[] output={2,3,4,1};
+		Assert.assertEquals(3412, shiftDigit(n, k));
 	}
 
-	private int  roatateArray(int n, int k) {
-		int size =Integer.toString(n).length();
-        int[] output =new int[size];
-        int digit=0;
-
-        while (n>0){
-            
-        }
-        for (int i=0; i<k; i++)
-        {
-        	int temp=digit[j];
-        	digit[j]=digit[j+1];
-        	digit[j+1]=temp;
-        }
-        
-		return null;
-	}
-	
 	private int shiftDigit(int n, int k){
         String result="";
         String digit=String.valueOf(n);
