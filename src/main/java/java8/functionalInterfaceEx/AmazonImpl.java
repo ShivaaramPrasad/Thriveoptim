@@ -20,5 +20,4 @@ public class AmazonImpl{
 		}
 	};
 
-	az.bookOrder("bags", 2);
 }
