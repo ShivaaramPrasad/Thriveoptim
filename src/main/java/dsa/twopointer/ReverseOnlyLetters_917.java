@@ -28,8 +28,14 @@ s does not contain '\"' or '\\'.
 	 */
 	
 	@Test
-	public void test() {
+	public void test1() {
 		String s = "ab-cd";
+		System.out.println(reverseLetters(s));
+	}
+	
+	@Test
+	public void test2() {
+		String s = "lakshmi - Shivaaram Prasad" ;
 		System.out.println(reverseLetters(s));
 	}
 	
@@ -70,11 +76,10 @@ s does not contain '\"' or '\\'.
 				}
 				else {
 					last--;
-				}
-				
+				}	
 				
 			}
-			
-			return  s = new String(chars);
+	        return new String(chars);
+
 		}
 	}

@@ -20,7 +20,7 @@ public class ImportantQuestions {
 
 	#9. Search Element In Array Using Binary Search - Step By Step Logic Explained
 
-	#10. Java Program To Find All Pairs From Integer Array Whose Sum Is Equal To A Number | Brute Force|
+	#10. Java Program To Find All Pairs Fro  m Integer Array Whose Sum Is Equal To A Number | Brute Force|
 
 	#11. Java Program To Find All Pairs From Integer Array Whose Sum Is Equal To A Number | By Sorting|
 
