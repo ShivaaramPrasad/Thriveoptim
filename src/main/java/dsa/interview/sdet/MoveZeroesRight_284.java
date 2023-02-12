@@ -21,7 +21,11 @@ public class MoveZeroesRight_284 {
 	public void example1() {
 		int[] nums = {4,0,2,0,0,1};
 		int[] out = {4,2,1,0,0,0};
+		Integer[] outI = {4,2,1,0,0,0};
+
 		Assert.assertArrayEquals(out ,moveZeroesRight2pointer(nums));
+		Assert.assertEquals(outI ,moveZeroesBrutforce(nums));
+
 	}
 
 
@@ -38,5 +42,20 @@ public class MoveZeroesRight_284 {
 		System.out.println(Arrays.toString(nums));	
 		return nums;
 	}
+	
+	private Integer[] moveZeroesBrutforce(int[] nums) {
+			List<Integer> numbers = new ArrayList<Integer>();
+			List<Integer> zero = new ArrayList<Integer>();
+			for (int i = 0; i < nums.length; i++) { 
+				if(nums[i] == 0) {
+					zero.add(nums[i]);
+				}
+				else{
+					numbers.add(nums[i]);
+				}
+			}
+			numbers.addAll(zero);
+			return numbers.toArray(new Integer[numbers.size()]);
+		} 
 }
 
