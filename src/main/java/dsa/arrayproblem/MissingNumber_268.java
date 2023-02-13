@@ -87,8 +87,6 @@ Approch
 	@Test//Positve 
 	public void example2(){
 		int[] numb = {3,0,1};
-		//2
-
 		Assert.assertEquals(missingNumberBruteForce(numb),2);
 		Assert.assertEquals(missingNumberOptimized(numb),2);
 
@@ -97,8 +95,6 @@ Approch
 	@Test//Edge Case 
 	public void example3(){
 		int[] numb = {0,1};
-		//2
-
 		Assert.assertEquals(missingNumberBruteForce(numb),2);
 		Assert.assertEquals(missingNumberOptimized(numb),2);
 

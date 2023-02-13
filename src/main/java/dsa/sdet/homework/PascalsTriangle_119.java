@@ -1,4 +1,4 @@
-package dsa.interview.sdet;
+package dsa.sdet.homework;
 
 import java.util.Arrays;
 import java.util.List;
