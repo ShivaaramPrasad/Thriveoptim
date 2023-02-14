@@ -42,5 +42,4 @@ public class PowerofThree_326 {
 	        if(n==1) return true;
 	        return false;
 	    }
-
 }

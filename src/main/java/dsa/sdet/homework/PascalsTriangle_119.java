@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 
 public class PascalsTriangle_119 {
 
-	
-
 	@Test
 	public void test1() {
 		int rowIndex = 0;
