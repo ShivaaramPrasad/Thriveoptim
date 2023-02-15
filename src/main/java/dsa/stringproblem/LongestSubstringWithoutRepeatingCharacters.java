@@ -96,7 +96,7 @@ return max
 				currentMax = hset.size();
 				end++;
 			}
-			max = Math.maxab(max, currentMax);
+			max = Math.max(max, currentMax);
 
 		}
 		return max;

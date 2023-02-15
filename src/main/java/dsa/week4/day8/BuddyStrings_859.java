@@ -1,10 +1,14 @@
 package dsa.week4.day8;
 
-import org.junit.Test;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
+import org.junit.Test;
 
-public class BuddyStrings_859{
+public class BuddyStrings_859 {
 	
 	/*
 	 * Given two strings s and goal, return true if you can swap two letters in s so the result is equal to goal, otherwise, return false.
@@ -55,8 +59,40 @@ Explanation: You can swap s[0] = 'a' and s[1] = 'a' to get "aa", which is equal 
 	 - if both strings length are same swappable the charecters 
 	 - 
 	 */
-	private String buddyStrings(String s, String goal) {
-		// TODO Auto-generated method stub
-		return null;
+	private boolean buddyStrings(String s, String goal) {
+	    // If the lengths of the strings are not equal, they cannot be buddy strings.
+	    if (s.length() != goal.length()) {
+	        return false;
+	    }
+	    
+	    // If the two strings are equal, check if there are any repeated characters to swap.
+	    if (s.equals(goal)) {
+	        Map<Character, Integer> charCount = new HashMap<>();
+	        for (char c : s.toCharArray()) {
+	            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+	        }
+	        return charCount.values().stream().anyMatch(count -> count > 1);
+	    }
+	    
+	    // Find the indices of the mismatched characters in the two strings.
+	    List<Integer> indices = new ArrayList<>();
+	    for (int i = 0; i < s.length(); i++) {
+	        if (s.charAt(i) != goal.charAt(i)) {
+	            indices.add(i);
+	        }
+	    }
+	    
+	    // If there are more than two mismatched characters, the strings cannot be buddy strings.
+	    if (indices.size() != 2) {
+	        return false;
+	    }
+	    
+	    // Check if swapping the mismatched characters results in the two strings being equal.
+	    char[] sArr = s.toCharArray();
+	    char tmp = sArr[indices.get(0)];
+	    sArr[indices.get(0)] = sArr[indices.get(1)];
+	    sArr[indices.get(1)] = tmp;
+	    return new String(sArr).equals(goal);
 	}
+
 }
