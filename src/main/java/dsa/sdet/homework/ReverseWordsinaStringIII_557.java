@@ -1,4 +1,4 @@
-package dsa.twopointer;
+package dsa.sdet.homework;
 
 import org.junit.Assert;
 import org.junit.Test;
