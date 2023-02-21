@@ -82,7 +82,7 @@ M             1000
 	private int romanToInt(String s) {
       
 	
-		 String replace = s.replace("IV","IIII").replace("IX","VIIII").replace("XL","XXXX")
+		 String text = s.replace("IV","IIII").replace("IX","VIIII").replace("XL","XXXX")
 				          .replace("XC","LXXXX").replace("CM", "DCCCC").replace("CD", "CCCC");
 		HashMap<Character, Integer> romanmap= new HashMap<Character, Integer>(){ 
 			{put('I',1); put('V',5);
@@ -92,7 +92,7 @@ M             1000
 		};
 		
 		int result=0;
-		for (char ch : replace.toCharArray()) {
+		for (char ch : text.toCharArray()) {
 			result+=romanmap.get(ch);
 		}
 		return result;

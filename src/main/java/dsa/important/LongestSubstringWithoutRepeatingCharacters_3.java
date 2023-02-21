@@ -1,6 +1,8 @@
 package dsa.important;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -54,38 +56,38 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
 	    }
 	
 	public int lengthOfLongestSubstring3(String s) {
-        int n = s.length();
-        int[] freq = new int[128];
-        int ans = 0, i = 0, j = 0;
-        while (j < n) {
-            if (freq[s.charAt(j)] == 0) {
-                freq[s.charAt(j++)]++;
-                ans = Math.max(ans, j - i);
-            } else {
-                freq[s.charAt(i++)]--;
+		Map<Character, Integer> chars = new HashMap();
+
+        int left = 0;  int right = 0;
+        int res = 0;
+        while (right < s.length()) {
+            char r = s.charAt(right);
+            chars.put(r, chars.getOrDefault(r,0) + 1);
+            while (chars.get(r) > 1) {
+                char l = s.charAt(left);
+                chars.put(l, chars.get(l) - 1);
+                left++;
             }
+            res = Math.max(res, right - left + 1);
+            right++;
         }
-        return ans;
+        return res;
     }
 	
+	
 	public int lengthOfLongestSubstring2(String s) {
+		  if(s == null || s.length() == 0) return 0;
+	        Set<Character> uniqueSet = new HashSet<>();
+	        int maxLength = 0;
+	        for(int idx = 0; idx < s.length(); idx++){
+	            System.out.println("idx: "+idx);
+	            while(!uniqueSet.isEmpty() && uniqueSet.contains(s.charAt(idx))){
+	                uniqueSet.remove(s.charAt(idx-uniqueSet.size()));
+	            }
+	            uniqueSet.add(s.charAt(idx));
+	            maxLength = Math.max(uniqueSet.size(), maxLength);
 
-        if(s.length()==0)
-			return 0;
-		
-		int maxLen=-1;
-		Set<Character> set=new HashSet<>();
-		
-		for (int start = 0; start < s.length(); start++) {
-			for (int end = start; end < s.length(); end++) {
-				if(!set.add(s.charAt(end))) {
-					maxLen=Math.max(maxLen, end-start);
-					break;
-				}
-			}
-			set.clear();
-		}
-		return maxLen;	
-	}
-
+	        }
+	        return maxLength;
+	    }
 }
