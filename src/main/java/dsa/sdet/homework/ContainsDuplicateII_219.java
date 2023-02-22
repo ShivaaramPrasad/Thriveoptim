@@ -9,6 +9,7 @@ import org.junit.*;
 
 public class ContainsDuplicateII_219 {
 
+
 	@Test
 	public void test1() {
 		int [] nums = {1,2,3,1};
@@ -32,7 +33,7 @@ public class ContainsDuplicateII_219 {
 		Assert.assertEquals(false, containsNearbyDuplicate(nums, k));
 	}
 
-	private boolean containsNearbyDuplicate(int[] nums, int k) {
+	private boolean containsNearbyDuplicateMap(int[] nums, int k) {
 
 		HashMap<Integer,Integer> map = new HashMap<>();
 		for(int i=0;i< nums.length; i++){
@@ -43,5 +44,19 @@ public class ContainsDuplicateII_219 {
 			map.put(temp, i);
 		}
 		return false;
+
 	}
+	
+	public boolean containsNearbyDuplicate(int[] nums, int k) {
+		
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = i + 1; j <= i + k && j < nums.length; j++) {
+				if (nums[i] == nums[j]) 
+					return true;
+			}
+		}
+
+		return false;
+	}
+
 }
