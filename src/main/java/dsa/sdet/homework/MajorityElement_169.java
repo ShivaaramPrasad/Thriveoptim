@@ -1,5 +1,7 @@
 package dsa.sdet.homework;
 
+import java.util.Arrays;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,7 +23,7 @@ public class MajorityElement_169 {
 
 	}
 
-	private int majorityElement(int[] nums) {
+	private int majorityElement2(int[] nums) {
 		int count = 0;
 		int majele = nums[0];
 		for(int i=0;i<nums.length;i++){
@@ -33,5 +35,19 @@ public class MajorityElement_169 {
 		}
 		return majele;
 	}
+	/*
+    - Sort the array
+    - find the middle index by (left+right)/2;
+    - return middle value in the array
+    */
+   public int majorityElement(int[] nums) {
 
+       Arrays.sort(nums);
+       int left =0, right = nums.length-1;
+
+       int middle = (left+right)/2;
+
+       return nums[middle];
+
+   }
 }
