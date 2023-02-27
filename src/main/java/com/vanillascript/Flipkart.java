@@ -68,6 +68,7 @@ public class Flipkart {
 			System.out.println(url);
 			productMap.put(productLink.get(i).getAttribute("href"), productPrice);
 		}
+		
 		for (Map.Entry<String, Integer> entry : productMap.entrySet()) {
 			if (lowestValueUrl == null || entry.getValue() < productMap.get(lowestValueUrl)) {
 				lowestValueUrl = entry.getKey();
@@ -79,6 +80,5 @@ public class Flipkart {
 		driver.switchTo().newWindow(WindowType.TAB);
 		driver.navigate().to(lowestValueUrl);
 		driver.findElement(By.xpath("//button[text()='Add to cart']")).click();
-
 	}
 }

@@ -103,21 +103,14 @@ public class PermutationinString_567 {
 		
 		for (int i = 0; i < s1.length(); i++) {
 			pMap.put(s1.charAt(i), pMap.getOrDefault(s1.charAt(i), 0)+1);
-
 		}
         int start = 0, end = s1.length();
-        while(start<s2.length())
-        {
+        while(start<s2.length()){
             sMap.put(s2.charAt(start), sMap.getOrDefault(s2.charAt(start),0)+1);
-
         	if(sMap.equals(pMap))
-
 			  return true;
-
-
             if(sMap.get(s2.charAt(start)) > 1) 
 	             sMap.remove(s2.charAt(start));
-
             else 
 	             sMap.put(s2.charAt(start), sMap.get(s2.charAt(start)) - 1);
 	             start++;
