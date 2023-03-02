@@ -8,27 +8,7 @@ import org.junit.Test;
 
 public class SortArrayByParityTwoPinter_905 {
 
-	/*
-	905. Sort Array By Parity
-https://leetcode.com/problems/sort-array-by-parity/
-Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
-
-Return any array that satisfies this condition.
-
-
-
-Example 1:
-
-Input: nums = [3,1,2,4]
-Output: [2,4,3,1]
-Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
-Example 2:
-
-Input: nums = [0]
-Output: [0]
-
-	 */
-
+	
 	/*
     ask doubt 1) no need to sort 
           2) can have duplicate
@@ -40,12 +20,10 @@ Output: [0]
 	 * 4) Add in temp array return pair;
 	 */
 
-	@Test//Positve 
+	@Test
 	public void example1(){
 		int[] nums = {3,1,2,4}; 
-		//{2,4,3,1}
-
-		//assertEquals(true,Arrays.equals(sortArrayByParityTwoPinter(nums),new int[] {4,1,2,3}));
+		
 		System.out.println(Arrays.toString(sortArrayByParityTwoPinter(nums)));
 
 	}   
@@ -57,7 +35,7 @@ Output: [0]
 		int[] nums = {0};
 
 
-		//assertEquals(true,Arrays.equals(sortArrayByParityTwoPinter(nums),new int[] {0}));
+	//assertEquals(true,Arrays.equals(sortArrayByParityTwoPinter(nums),new int[] {0}));
 
 
 	}
