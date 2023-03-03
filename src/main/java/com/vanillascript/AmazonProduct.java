@@ -45,7 +45,6 @@ public class AmazonProduct {
 		driver.findElement(By.xpath("//span[text()='Returns']/following-sibling::span")).click();
 		driver.findElement(By.xpath("//span[text()[normalize-space()='past 3 months']]")).click();
 		driver.findElement(By.linkText("2022")).click();
-		(//span[text()[normalize-space()='Delivered 09-Dec-2022']]/following::a[@class='a-link-normal'])
 		driver.close();
 		driver.quit();
 

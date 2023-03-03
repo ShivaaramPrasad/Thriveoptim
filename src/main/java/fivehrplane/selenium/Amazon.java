@@ -1,4 +1,4 @@
-package fivehrplane.java;
+package fivehrplane.selenium;
 
 import java.text.DecimalFormat;
 import java.text.Format;
@@ -37,7 +37,6 @@ public class Amazon {
 		driver.get("https://www.amazon.in/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		driver.findElement(By.id("searchDropdownBox")).click();
 		WebElement allCategories =driver.findElement(By.id("searchDropdownBox"));
@@ -46,13 +45,10 @@ public class Amazon {
 		value_one.selectByVisibleText("Electronics");
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Apple iPhone",Keys.ENTER);
 		Thread.sleep(5000);
-		
-       WebElement element = driver.findElement(By.xpath("(//span[contains(text(),'Apple iPhone')]/..)[last()]"));
 
-        //This will scroll the page till the element is found		
-        //js.executeScript("arguments[0].scrollIntoView();", Element);
-      //  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+       WebElement element = driver.findElement(By.xpath("(//span[contains(text(),'Apple iPhone')]/..)[last()]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true)", element);
 
 		String newTabURL=driver.findElement(By.xpath("(//span[contains(text(),'Apple iPhone')]/..)[last()]")).getAttribute("href");
 		System.out.println("url : "+newTabURL);

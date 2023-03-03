@@ -27,7 +27,8 @@ public class MergeStringsAlternately_1768 {
 
 	}
 
-	/*pseudocode:
+	/*
+	 * pseudocode:
 	 * declare an empty string variable
 	 * intialze 2 variables as 0
 	 * iterate throught word1 & word2

@@ -54,7 +54,6 @@ public class SortArrayByParityTwoPinter_905 {
 		if (nums.length==1)   return new int[] {};
 		int start=0,  end = nums.length-1,  temp;
 		while(start < end){
-
 			if(nums[start]%2==0)start++;
 			else if (nums[end]%2!=0)end--;
 			if(nums[start]%2!=0 && nums[end]%2==0)
@@ -63,9 +62,7 @@ public class SortArrayByParityTwoPinter_905 {
 				nums[start++]=nums[end];
 				nums[end--]=temp;
 			}
-
 		}
-
 		return nums;
 
 	}
