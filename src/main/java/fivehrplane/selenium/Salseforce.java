@@ -45,25 +45,21 @@ public class Salseforce {
 
 		Actions action =new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor)driver;		
-	    WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-
-		Thread.sleep(10000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='photoContainer forceSocialPhoto']")));
-		
+	    WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	    
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='photoContainer forceSocialPhoto']")));		
 		WebElement globaActions= driver.findElement(By.xpath("//span[@class='photoContainer forceSocialPhoto']"));
 		action.moveToElement(globaActions);
 		String ViewProfile= driver.findElement(By.xpath("//span[@class='photoContainer forceSocialPhoto']")).getText();
 		if(ViewProfile.equals("View profile")) {
 			System.out.println("verified "+ViewProfile);
-		} else {
-			System.out.println("not verified"+ViewProfile);
 		}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//li[@class='slds-global-actions__item slds-dropdown-trigger slds-dropdown-trigger--click'])[1]")));
 		
 		driver.findElement(By.xpath("(//li[@class='slds-global-actions__item slds-dropdown-trigger slds-dropdown-trigger--click'])[1]")).click();
 		driver.findElement(By.xpath("//span[text()='New Lead']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Prasad");
-
+		driver.findElement(By.xpath("//span[text()='Company']/following::input)[1]")).click();
 		driver.findElement(By.xpath("//span[text()='Company']/following::input)[1]")).sendKeys("thriveopmtim");
 		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
 		String verify_message = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
@@ -71,12 +67,8 @@ public class Salseforce {
 			System.out.println(verify_message);
 		else
 			System.out.println("Create Lead is not successful");
-		Thread.sleep(10000);
 		driver.findElement(By.className("slds-icon-waffle")).click();
-		Thread.sleep(10000);
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
-		Thread.sleep(10000);
-
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
 		String salesTab = driver.findElement(By.xpath("//span[@title='Sales']")).getText();
 		if(salesTab.contains("Sales"))

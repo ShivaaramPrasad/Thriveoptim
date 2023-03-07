@@ -30,19 +30,21 @@ each thread has only one browser - no matter how many times you ask for a new br
     		  drivermap.put(Thread.currentThread().getId(),driver);
     		  return driver;
     	  }
-        	
         }      
    
       @Test
       public void test1() {
     	  WebDriver driver=getBrowserInstance();
     	  driver.get("https://www.google.com");
+		  System.out.println(drivermap.get(Thread.currentThread().getId()));
       }
       
       @Test
       public void test2() {
     	  WebDriver driver=getBrowserInstance();
     	  driver.get("https://www.facebook.com");
+		  System.out.println(drivermap.get(Thread.currentThread().getId()));
+
       }
       
 }

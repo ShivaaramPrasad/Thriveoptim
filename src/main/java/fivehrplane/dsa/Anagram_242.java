@@ -19,7 +19,6 @@ public class Anagram_242 {
 		String s1 = "listen";
 		String s2 = "silent";
 		Assert.assertEquals(true, isAnagramArrayHasMap(s1, s2));
-
 	}
 
 	@Test
@@ -27,7 +26,6 @@ public class Anagram_242 {
 		String s1 = "anagram";
 		String s2 = "nagaram";
 		Assert.assertEquals(true, isAnagramArrayHasMap(s1, s2));
-
 	}
 
 	@Test
@@ -35,7 +33,6 @@ public class Anagram_242 {
 		String s1 = "ABCD";
 		String s2 = "CBA";
 		Assert.assertEquals(false, isAnagramArrayHasMap(s1, s2));
-
 	}
 
 	@Test
@@ -44,9 +41,7 @@ public class Anagram_242 {
 		String s2 = "AAAB";
 		Assert.assertEquals(false, isAnagramArrayHasMap(s1, s2));
 		//Assert.assertEquals(false, isAnagramAsciiArray(s1, s2));
-
 	}
-
 
 	private boolean isAnagramArrayHasMap(String s1, String s2) {
 		if(s1.length()!=s2.length())return false;
@@ -59,6 +54,4 @@ public class Anagram_242 {
 		} 	
          return sMap.equals(tMap);
 	}
-
-	
 }
