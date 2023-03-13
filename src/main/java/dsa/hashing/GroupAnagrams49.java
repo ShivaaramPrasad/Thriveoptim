@@ -59,9 +59,7 @@ Output: [["a"]]
 			for (char c : words[i].toCharArray()) {
 				lmap.put(c, lmap.getOrDefault(c,0)+1);
 			}
-
-			if(outMap.containsKey(lmap))
-			{
+			if(outMap.containsKey(lmap)){
 				List<String> matchWord=outMap.get(lmap);
 				matchWord.add(words[i]);
 			}else {
